@@ -10,5 +10,11 @@
     "python.testing.unittestEnabled": true,
     "conventionalCommits.scopes": [
         "bank"
-    ]
+    ],
+    "search.exclude": {
+        "**/__pycache__": true
+    },
+    "files.exclude": {
+        "**/__pycache__": true
+    }
 }
