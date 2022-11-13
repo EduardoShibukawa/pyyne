@@ -3,6 +3,7 @@ from bank2_account_balance import Bank2AccountBalance
 
 
 class Bank2AccountSource:
+
     def get_account_balance(self, account_id):
         return Bank2AccountBalance(512.5, "USD")
 
