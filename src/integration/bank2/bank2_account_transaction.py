@@ -6,7 +6,7 @@ class Bank2AccountTransaction:
         DEBIT = 1,
         CREDIT = 2
 
-    def __init__(self, amount, type, text):
+    def __init__(self, amount, type: TransactionType, text):
         self.amount = amount
         self.type = type
         self.text = text
