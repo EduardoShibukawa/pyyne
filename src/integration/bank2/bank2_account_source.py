@@ -1,4 +1,4 @@
-from bank2_transaction import Bank2Transaction
+from integration.bank2.bank2_account_transaction import Bank2AccountTransaction
 from bank2_account_balance import Bank2AccountBalance
 
 
