@@ -21,3 +21,23 @@ class Bank1TransactionAdapter:
 
     def text(self) -> str:
         return self.__text__
+
+    def __hash__(self):
+        return hash(self.__amount__, self.__type__, self.__text__)
+
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.__amount__ == other.__amount__ and
+            self.__type__ == other.__type__ and
+            self.__text__ == other.__text__
+        )
+
+    def __repr__(self):
+        details = '{'
+        details += f'Amount  : {self.__amount__}\n'
+        details += f'Type         : {self.__type__}\n'
+        details += f'Text         : {self.__text__}\n'
+        details += '}'
+
+        return details
