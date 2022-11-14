@@ -12,3 +12,21 @@ class Bank2BalanceAdapter:
 
     def currency(self) -> str:
         return self.__currency__
+
+    def __repr__(self):
+        details = '{'
+        details += f'AccountBalance  : {self.__account_balance__}\n'
+        details += f'Currency         : {self.__currency__}\n'
+        details += '}'
+
+        return details
+
+    def __hash__(self):
+        return hash(self.__account_balance__, self.__currency__)
+
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.__account_balance__ == other.__account_balance__ and
+            self.__currency__ == other.__currency__
+        )
