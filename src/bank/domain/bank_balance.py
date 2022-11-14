@@ -1,0 +1,28 @@
+class BankBalance:
+    def __init__(self, balance, currency):
+        self.__account_balance__: Final = balance
+        self.__currency__: Final = currency
+
+    def balance(self) -> float:
+        return self.__account_balance__
+
+    def currency(self) -> str:
+        return self.__currency__
+
+    def __hash__(self):
+        return hash(self.__account_balance__, self.__currency__)
+
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.__account_balance__ == other.__account_balance__ and
+            self.__currency__ == other.__currency__
+        )
+
+    def __repr__(self):
+        details = '{'
+        details += f'AccountBalance  : {self.__account_balance__}\n'
+        details += f'Currency         : {self.__currency__}\n'
+        details += '}'
+
+        return details

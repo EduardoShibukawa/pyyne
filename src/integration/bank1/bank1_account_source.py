@@ -1,14 +1,14 @@
-from bank1_transaction import Bank1Transaction
+from src.integration.bank1.bank1_transaction import Bank1Transaction
 
 
 class Bank1AccountSource:
     def get_account_balance(self, account_id):
         return 215.5
 
-    def get_account_currency(account_id):
+    def get_account_currency(self, account_id):
         return "USD"
 
-    def get_transactions(account_id, from_date, to_date):
+    def get_transactions(self, account_id, from_date, to_date):
         return [
             Bank1Transaction(
                 100, Bank1Transaction.TYPE_CREDIT, "Check deposit"),
