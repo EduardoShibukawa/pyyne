@@ -1,6 +1,6 @@
 from pprint import pprint
 import unittest
-from src.bank.domain.usecase.print_balance_usecase import PrintBalanceUseCase
+from src.bank.domain.usecase.get_balance_usecase import GetBalanceUseCase
 from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
 from src.bank.domain.bank_balance import BankBalance
 
@@ -15,7 +15,7 @@ class GetBalanceUseCaseTest(unittest.TestCase):
                 BankBalance(200, "USD")
             ]
 
-        self.use_case = PrintBalanceUseCase(
+        self.use_case = GetBalanceUseCase(
             get_account_balance_account_bank
         )
 
@@ -30,7 +30,7 @@ class GetBalanceUseCaseTest(unittest.TestCase):
                 BankBalance(200, "RS")
             ]
 
-        self.use_case = PrintBalanceUseCase(
+        self.use_case = GetBalanceUseCase(
             get_account_balance_account_bank
         )
 
