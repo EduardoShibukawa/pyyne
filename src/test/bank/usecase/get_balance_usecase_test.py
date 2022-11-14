@@ -5,7 +5,7 @@ from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
 from src.bank.domain.bank_balance import BankBalance
 
 
-class PrintBalanceUseCaseTest(unittest.TestCase):
+class GetBalanceUseCaseTest(unittest.TestCase):
 
     def test_should_sum_balance_when_currency_is_the_same(self):
         def get_account_balance_account_bank(

@@ -8,7 +8,7 @@ from src.bank.domain.adapter.bank1_balance_adapter import Bank1BalanceAdapter
 from src.bank.domain.bank_balance import BankBalance
 
 
-class PrintBalanceUseCase:
+class GetBalanceUseCase:
 
     def __init__(self,
                  get_account_balance_supplier
