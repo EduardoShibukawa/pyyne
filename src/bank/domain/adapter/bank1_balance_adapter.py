@@ -24,8 +24,8 @@ class Bank1BalanceAdapter:
 
     def __repr__(self):
         details = '{'
-        details += f'AccountBalance  : {self.__account_balance__}\n'
-        details += f'Currency         : {self.__currency__}\n'
+        details += f'"accountBalance": {self.__account_balance__},'
+        details += f'"currency": {self.__currency__}'
         details += '}'
 
         return details

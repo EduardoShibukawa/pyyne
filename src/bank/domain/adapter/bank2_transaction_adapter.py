@@ -36,9 +36,9 @@ class Bank2TransactionAdapter:
 
     def __repr__(self):
         details = '{'
-        details += f'Amount  : {self.__amount__}\n'
-        details += f'Type         : {self.__type__}\n'
-        details += f'Text         : {self.__text__}\n'
+        details += f'"amount"  : {self.__amount__},'
+        details += f'"type": "{self.__type__}",'
+        details += f'"text": "{self.__text__}"'
         details += '}'
 
         return details

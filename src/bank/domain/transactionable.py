@@ -1,5 +1,5 @@
 from typing import Protocol
-from transaction_type import TransactionType
+from src.bank.domain.transaction_type import TransactionType
 
 
 class Transactionable(Protocol):

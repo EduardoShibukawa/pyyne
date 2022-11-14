@@ -6,6 +6,7 @@ from src.integration.bank1.bank1_account_source import Bank1AccountSource
 from src.bank.domain.adapter.bank2_balance_adapter import Bank2BalanceAdapter
 from src.bank.domain.adapter.bank1_balance_adapter import Bank1BalanceAdapter
 from src.bank.domain.bank_balance import BankBalance
+from src.bank.domain.balanceable import Balanceable
 
 
 class GetBalanceUseCase:
@@ -15,7 +16,7 @@ class GetBalanceUseCase:
                  ):
         self.get_account_balance_supplier = get_account_balance_supplier
 
-    def get_account_balance(self, account_id):
+    def get_account_balance(self, account_id) -> list[Balanceable]:
         bank1_account, bank2_account = self.get_account_balance_supplier(
             account_id)
 
