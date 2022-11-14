@@ -10,7 +10,7 @@ class BankController:
         self.__get_transactions_use_case__ = get_transactions_use_case
 
     def get_balances(self, account_id):
-        return self.__get_balance_use_case__(account_id)
+        return self.__get_balance_use_case__.get_account_balance(account_id)
 
     def get_transcations(self, account_id, from_date, to_date):
-        return self.__get_transactions_use_case__(account_id, from_date, to_date)
+        return self.__get_transactions_use_case__.get_transactions(account_id, from_date, to_date)
