@@ -25,7 +25,7 @@ class BankBalance:
     def __repr__(self):
         details = '{'
         details += f'"accountBalance": {self.__account_balance__},'
-        details += f'"currency": {self.__currency__}'
+        details += f'"currency": "{self.__currency__}"'
         details += '}'
 
         return details

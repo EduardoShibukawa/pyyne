@@ -1,4 +1,5 @@
 from typing import Final
+
 from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
 
 
@@ -16,7 +17,7 @@ class Bank2BalanceAdapter:
     def __repr__(self):
         details = '{'
         details += f'"accountBalance": {self.__account_balance__},'
-        details += f'"currency": {self.__currency__}'
+        details += f'"currency": "{self.__currency__}"'
         details += '}'
 
         return details

@@ -2,15 +2,16 @@ import unittest
 from datetime import datetime
 from unittest.mock import MagicMock
 
-
 from src.bank.client.bank_client import BankClient
-from src.integration.bank1.bank1_account_source import Bank1AccountSource
-from src.integration.bank2.bank2_account_source import Bank2AccountSource
-from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
 from src.bank.domain.adapter.bank1_balance_adapter import Bank1BalanceAdapter
+from src.bank.domain.adapter.bank1_transaction_adapter import \
+    Bank1TransactionAdapter
 from src.bank.domain.adapter.bank2_balance_adapter import Bank2BalanceAdapter
-from src.bank.domain.adapter.bank1_transaction_adapter import Bank1TransactionAdapter
-from src.bank.domain.adapter.bank2_transaction_adapter import Bank2TransactionAdapter
+from src.bank.domain.adapter.bank2_transaction_adapter import \
+    Bank2TransactionAdapter
+from src.integration.bank1.bank1_account_source import Bank1AccountSource
+from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
+from src.integration.bank2.bank2_account_source import Bank2AccountSource
 
 
 class BankClientTest(unittest.TestCase):
