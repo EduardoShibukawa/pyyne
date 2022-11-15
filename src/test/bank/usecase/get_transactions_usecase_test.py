@@ -1,7 +1,9 @@
 import unittest
 from datetime import datetime
-from src.bank.domain.usecase.get_transactions_usecase import GetTransactionsUseCase
+
 from src.bank.domain.transaction_type import TransactionType
+from src.bank.domain.usecase.get_transactions_usecase import \
+    GetTransactionsUseCase
 
 
 class GetBalanceUseCaseTest(unittest.TestCase):

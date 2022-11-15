@@ -1,8 +1,10 @@
 import unittest
-from unittest.mock import MagicMock
 from datetime import datetime
+from unittest.mock import MagicMock
+
 from src.bank.bank_controller import BankController
-from src.bank.domain.usecase.get_transactions_usecase import GetTransactionsUseCase
+from src.bank.domain.usecase.get_transactions_usecase import \
+    GetTransactionsUseCase
 
 
 class GetTransactionTest(unittest.TestCase):

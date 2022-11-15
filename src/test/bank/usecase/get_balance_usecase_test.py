@@ -1,8 +1,7 @@
-from pprint import pprint
 import unittest
-from src.bank.domain.usecase.get_balance_usecase import GetBalanceUseCase
-from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
+
 from src.bank.domain.bank_balance import BankBalance
+from src.bank.domain.usecase.get_balance_usecase import GetBalanceUseCase
 
 
 class GetBalanceUseCaseTest(unittest.TestCase):
