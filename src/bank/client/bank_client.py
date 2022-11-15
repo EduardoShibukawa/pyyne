@@ -7,9 +7,9 @@ from src.bank.domain.adapter.bank2_transaction_adapter import Bank2TransactionAd
 
 
 class BankClient:
-    def __init__(self):
-        self.bank1_account_source = Bank1AccountSource()
-        self.bank2_account_source = Bank2AccountSource()
+    def __init__(self, bank1_account_source: Bank1AccountSource, bank2_account_source: Bank2AccountSource):
+        self.bank1_account_source = bank1_account_source
+        self.bank2_account_source = bank2_account_source
 
     def get_account_balance(self, account_id):
         return [

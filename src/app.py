@@ -8,7 +8,9 @@ from src.integration.bank2.bank2_account_source import Bank2AccountSource
 from src.integration.bank1.bank1_account_source import Bank1AccountSource
 
 if __name__ == "__main__":
-    bank_client = BankClient()
+    bank1_account_source = Bank1AccountSource()
+    bank2_account_source = Bank2AccountSource()
+    bank_client = BankClient(bank1_account_source, bank2_account_source)
     bank_controller = BankController(
         get_balance_use_case=GetBalanceUseCase(
             bank_client.get_account_balance),
@@ -25,7 +27,6 @@ if __name__ == "__main__":
     print("Transactions:")
     pprint(transactions)
 
-    bank1_account_source = Bank1AccountSource()
     pprint("-" * 10)
     print("Account Balance Bank 1:")
     pprint(bank1_account_source.get_account_balance(123))
@@ -34,7 +35,6 @@ if __name__ == "__main__":
     pprint(bank1_account_source.get_transactions(
         123, datetime.today(), datetime.today()))
 
-    bank2_account_source = Bank2AccountSource()
     pprint("-" * 10)
     print("Account Balance Bank 2:")
     pprint(bank2_account_source.get_account_balance(123))
