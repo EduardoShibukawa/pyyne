@@ -19,7 +19,7 @@ Steps:
 ## Usage Example
 
 ```bash
-vscode ➜ /workspaces/pyyne (main ✗) $ python3 src/app.py 
+vscode ➜ /workspaces/pyyne (main ✗) $ make
 Account Balance:
 {"accountBalance": 728.0,"currency": "USD"}
 Transactions:
