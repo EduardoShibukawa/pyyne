@@ -12,7 +12,7 @@ from src.integration.bank2.bank2_account_transaction import \
     Bank2AccountTransaction
 
 
-class BankClientTest(unittest.TestCase):
+class BankClientGetTransactionsTest(unittest.TestCase):
 
     def setUp(self):
         self.bank1_account_source = MagicMock()

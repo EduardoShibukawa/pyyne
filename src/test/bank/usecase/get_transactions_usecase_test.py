@@ -70,6 +70,20 @@ class GetBalanceUseCaseTest(unittest.TestCase):
         self.assertEqual(self.use_case.get_transactions(
             123, datetime.today(), datetime.today()), transactions)
 
+    def test_should_return_empty_transaction_list_when_empty_list_is_returned(self):
+        transactions = []
+
+        def get_transactions(
+                account_id, from_date, to_date):
+            return transactions
+
+        self.use_case = GetTransactionsUseCase(
+            get_transactions
+        )
+
+        self.assertEqual(self.use_case.get_transactions(
+            123, datetime.today(), datetime.today()), transactions)
+
 
 if __name__ == '__main__':
     unittest.main()

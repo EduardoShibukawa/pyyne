@@ -5,8 +5,8 @@ from src.integration.bank2.bank2_account_balance import Bank2AccountBalance
 
 class Bank2BalanceAdapter:
     def __init__(self, bank2_account_balance: Bank2AccountBalance):
-        self.__account_balance__: Final = bank2_account_balance.balance
-        self.__currency__: Final = bank2_account_balance.currency
+        self.__account_balance__: Final = bank2_account_balance.balance or 0.0 if bank2_account_balance is not None else 0.0
+        self.__currency__: Final = bank2_account_balance.currency or "USD" if bank2_account_balance is not None else "USD"
 
     def balance(self) -> float:
         return self.__account_balance__

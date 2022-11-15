@@ -10,8 +10,8 @@ class GetBalanceUseCaseTest(unittest.TestCase):
         def get_account_balance_account_bank(
                 account_id):
             return [
-                BankBalance(100, "USD"),
-                BankBalance(200, "USD")
+                BankBalance(100, "RS"),
+                BankBalance(200, "RS")
             ]
 
         self.use_case = GetBalanceUseCase(
@@ -19,7 +19,7 @@ class GetBalanceUseCaseTest(unittest.TestCase):
         )
 
         self.assertEqual(self.use_case.get_account_balance(
-            "123"), BankBalance(300, "USD"))
+            "123"), BankBalance(300, "RS"))
 
 
 if __name__ == '__main__':

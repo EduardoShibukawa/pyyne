@@ -3,8 +3,8 @@ from typing import Final
 
 class Bank1BalanceAdapter:
     def __init__(self, acccount_balance: float, currency: str):
-        self.__account_balance__: Final = acccount_balance
-        self.__currency__: Final = currency
+        self.__account_balance__: Final = acccount_balance or 0.0
+        self.__currency__: Final = currency or "USD"
 
     def balance(self) -> float:
         return self.__account_balance__
