@@ -7,7 +7,7 @@ from src.bank.domain.bank_balance import BankBalance
 
 class GetBalanceUseCaseTest(unittest.TestCase):
 
-    def test_should_sum_balance_when_currency_is_the_same(self):
+    def test_should_sum_balance(self):
         def get_account_balance_account_bank(
                 account_id):
             return [
@@ -20,22 +20,7 @@ class GetBalanceUseCaseTest(unittest.TestCase):
         )
 
         self.assertEqual(self.use_case.get_account_balance(
-            "123"), [BankBalance(300, "USD")])
-
-    def test_should_group_by_currency(self):
-        def get_account_balance_account_bank(
-                account_id):
-            return [
-                BankBalance(100, "USD"),
-                BankBalance(200, "RS")
-            ]
-
-        self.use_case = GetBalanceUseCase(
-            get_account_balance_account_bank
-        )
-
-        self.assertEqual(self.use_case.get_account_balance(
-            "123"), [BankBalance(100, "USD"), BankBalance(200, "RS")])
+            "123"), BankBalance(300, "USD"))
 
 
 if __name__ == '__main__':

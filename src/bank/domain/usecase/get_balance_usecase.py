@@ -1,5 +1,4 @@
-from itertools import groupby
-from operator import itemgetter
+from functools import reduce
 
 from src.integration.bank2.bank2_account_source import Bank2AccountSource
 from src.integration.bank1.bank1_account_source import Bank1AccountSource
@@ -17,13 +16,8 @@ class GetBalanceUseCase:
         self.get_account_balance_supplier = get_account_balance_supplier
 
     def get_account_balance(self, account_id) -> list[Balanceable]:
-        bank1_account, bank2_account = self.get_account_balance_supplier(
+        balances = self.get_account_balance_supplier(
             account_id)
 
-        if (bank1_account.currency() == bank2_account.currency()):
-            return [BankBalance(bank1_account.balance() + bank2_account.balance(), bank1_account.currency())]
-
-        return [
-            bank1_account,
-            bank2_account
-        ]
+        # We can assume all balances have the same currency
+        return reduce(lambda b1, b2: BankBalance(b1.balance() + b2.balance(), b1.currency()), balances)
