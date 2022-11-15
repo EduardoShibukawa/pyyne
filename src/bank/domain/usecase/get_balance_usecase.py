@@ -17,6 +17,9 @@ class GetBalanceUseCase:
         balances = self.get_account_balance_supplier(
             account_id)
 
+        if not bool(balances):
+            return BankBalance(0.0, "USD")
+
         def sum_balances(current: Balanceable, next: Balanceable):
             # We can assume all balances have the same currency
             return BankBalance(current.balance() + next.balance(), current.currency())
