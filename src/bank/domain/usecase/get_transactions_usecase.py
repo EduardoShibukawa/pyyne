@@ -11,5 +11,5 @@ class GetTransactionsUseCase:
                      int, date, date], list[Transactionable]]):
         self.get_transactions_supplier = get_transactions_supplier
 
-    def get_transactions(self, account_id, from_date, to_date) -> list[Transactionable]:
+    def get_transactions(self, account_id: int, from_date: date, to_date: date) -> list[Transactionable]:
         return self.get_transactions_supplier(account_id, from_date, to_date)

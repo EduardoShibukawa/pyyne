@@ -13,7 +13,7 @@ class GetBalanceUseCase:
                  ):
         self.get_account_balance_supplier = get_account_balance_supplier
 
-    def get_account_balance(self, account_id) -> list[Balanceable]:
+    def get_account_balance(self, account_id: int) -> list[Balanceable]:
         balances = self.get_account_balance_supplier(
             account_id)
 
